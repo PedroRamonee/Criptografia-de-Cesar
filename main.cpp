@@ -2,11 +2,11 @@
 CIFRA DE CÉSAR
 
     a Cifra de César, também conhecida como cifra de troca, código de César ou
-    troca de César, é uma das mais simples e conhecidas técnicas de criptografia. É
-    um tipo de cifra de substituição na qual cada letra do texto é substituída por
-    outra, que se apresenta no alfabeto abaixo dela um número fixo de vezes. Por
-    exemplo, com uma troca de três posições, A seria substituído por D, B se
-    tornaria E, e assim por diante.
+    troca de César, é uma das mais simples e conhecidas técnicas de
+criptografia. É um tipo de cifra de substituição na qual cada letra do texto é
+substituída por outra, que se apresenta no alfabeto abaixo dela um número fixo
+de vezes. Por exemplo, com uma troca de três posições, A seria substituído por
+D, B se tornaria E, e assim por diante.
 */
 
 #include <cstdlib>
@@ -80,21 +80,32 @@ void troca(string &palavra, int chave) {
 int main() {
     string Palavra;
     int chave = 0;
+    int control = 0;
 
-    cout << "Digite a palavra a ser criptografada:" << endl;
+    cout << "Digite a palavra/frase a ser criptografada ou descriptografada:"
+         << endl;
 
     getline(cin, Palavra);
 
     cout << "Digite a chave de criptografia:" << endl;
+
     cin >> chave;
 
-    cout << "\nPalavra pre cifra de cesar: " << Palavra << endl;
-    troca(Palavra, chave);
-    cout << " \nPalavra pos cifra de cesar: " << Palavra << endl;
+    cout << "Digite:\n 1 para criptografar\n 2 para descriptografar" << endl;
 
-    cout << " \nDescriptografando: " << Palavra << endl;
-    descriptografar(Palavra, chave);
-    cout << " \nPalavra descriptografada: " << Palavra << endl;
+    cin >> control;
+
+    if (control == 1) {
+        cout << "\nPalavra pre cifra de cesar: " << Palavra << endl;
+        troca(Palavra, chave);
+        cout << " \nPalavra pos cifra de cesar: " << Palavra << "\n" << endl;
+    } else if (control == 2) {
+        cout << " \nDescriptografando: " << Palavra << endl;
+        descriptografar(Palavra, chave);
+        cout << " \nPalavra descriptografada: " << Palavra << "\n" << endl;
+    } else {
+        cout << "chave invalida" << endl;
+    }
 
     return 0;
 }
