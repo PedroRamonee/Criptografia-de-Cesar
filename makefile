@@ -4,7 +4,7 @@ delete:
 	del *.o
 
 compile:
-	g++ -c main.cpp 
+	g++ -c main.cpp src/*.cpp
 
 link:
 	g++ *.o -o main 
