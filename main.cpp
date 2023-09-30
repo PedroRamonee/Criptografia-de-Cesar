@@ -10,13 +10,13 @@ int main() {
 
     getline(cin, Palavra);
 
-    cout << "Digite a chave de criptografia:" << endl;
-
-    cin >> chave;
-
     cout << "Digite:\n 1 para criptografar\n 2 para descriptografar" << endl;
 
     cin >> control;
+
+    cout << "Digite a chave de criptografia:" << endl;
+
+    cin >> chave;
 
     if (control == 1) {
         cout << "\nPalavra pre cifra de cesar: " << Palavra << endl;

@@ -66,9 +66,9 @@ void troca(string &palavra, int chave) {
                             palavra[i] = 'Z';
                         }
                     }
-                }
 
-                j--;
+                    j--;
+                }
             }
         }
     }
